@@ -89,6 +89,29 @@ test('.post should not decode "+" chars', async (t) => {
   })
 })
 
+test('.post uses preprocessor to prevent from breaking 3ds2 redirect url', async (t) => {
+  nock(baseUrl)
+    .post(/.*/)
+    .reply(200, 'ACS=2&RedirectUrl=https://manage.tds2gw.gmopg.jp/api/v2/brw/callback?transId=6e48e31f-2940-48e1-a702-ebba2f3373ee&t=dccc8a7ed85372c9accff576bff59b3a')
+
+  type Res = {
+    ACS: string,
+    RedirectUrl: string,
+  }
+  const res = await client.post<{}, Res>(
+    '/test1',
+    {},
+    data => data.startsWith('ACS=2&RedirectUrl=')
+          ? data.replace('&t=', '%26t=')
+          : data
+  )
+
+  t.deepEqual(res, {
+    ACS: '2',
+    RedirectUrl: 'https://manage.tds2gw.gmopg.jp/api/v2/brw/callback?transId=6e48e31f-2940-48e1-a702-ebba2f3373ee&t=dccc8a7ed85372c9accff576bff59b3a',
+  })
+})
+
 test('client instance has deep merged config', async (t) => {
   const c = new Client({
     baseUrl: 'http://localhost',

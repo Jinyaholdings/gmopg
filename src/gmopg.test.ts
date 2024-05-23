@@ -20,6 +20,10 @@ test('.ENUMS returns enum object', (t) => {
     'SeqMode',
     'DefaultFlag',
     'CvsCode',
+    'TdFlag',
+    'Tds2Type',
+    'TdRequired',
+    'CallbackType',
   ])
 })
 
@@ -94,6 +98,10 @@ test('.searchTrade is function', (t) => {
 
 test('.changeTran is function', (t) => {
   t.is(typeof gmopg.changeTran, 'function')
+})
+
+test('.secureTran2 is function', (t) => {
+  t.is(typeof gmopg.secureTran2, 'function')
 })
 
 test('.entryTranCvs is function', (t) => {

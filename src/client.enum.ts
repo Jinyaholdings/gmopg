@@ -70,3 +70,25 @@ export enum CvsCode {
   SevenEleven = '00007',
   SeicoMart = '10008',
 }
+
+export enum TdFlag {
+  Tds2 = '2',
+}
+
+export enum Tds2Type {
+  AuthenticateWithTds1 = '1',
+  ProcessingEndsAsAnError = '2',
+  NormalAuthorization = '3',
+}
+
+export enum TdRequired {
+  FollowContract = '0',
+  Required = '1',
+  NotRequired = '2',
+}
+
+export enum CallbackType {
+  Post = '1',
+  Direct = '2',
+  Get = '3',
+}

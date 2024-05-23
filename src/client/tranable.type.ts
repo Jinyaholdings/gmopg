@@ -9,6 +9,8 @@ export type EntryTranArgs = ShopArgs & {
   Tax?: number
   TdFlag?: string
   TdTenantName?: string
+  Tds2Type?: string
+  TdRequired?: string
 }
 
 export type EntryTranResult = Result & {
@@ -24,33 +26,40 @@ export type ExecTranArgs = {
   PayTimes?: number
   CardNo?: string
   Expire?: string
+  HolderNaame?: string
   SecurityCode?: string
+  TokenType?: string
   Token?: string
-  Pin?: string
+  PIN?: string
   SiteID?: string
   SitePass?: string
   MemberID?: string
   SeqMode?: SeqMode
   CardSeq?: number
   CardPass?: string
+  AppMode?: string
+  RetUrl?: string
+  Tds2ChallengeIndType?: string
+  CallbackType?: string
   ClientField1?: string
   ClientField2?: string
   ClientField3?: string
 }
 
 export type ExecTranResult = Result & {
-  Acs: string
-  OrderID: string
-  Forward: string
-  Method: Method
-  PayTimes: string
-  Approve: string
-  TranID: string
-  TranDate: string
-  CheckString: string
-  ClientField1: string
-  ClientField2: string
-  ClientField3: string
+  ACS: string
+  OrderID?: string
+  Forward?: string
+  Method?: Method
+  PayTimes?: string
+  Approve?: string
+  TranID?: string
+  TranDate?: string
+  CheckString?: string
+  ClientField1?: string
+  ClientField2?: string
+  ClientField3?: string
+  RedirectUrl?: string
 }
 
 export type AlterTranArgs = ShopArgs & {
@@ -58,7 +67,9 @@ export type AlterTranArgs = ShopArgs & {
   AccessPass: string
   JobCd: JobCd
   Amount?: number
+  Tax?: number
   Method?: Method
+  PayTimes?: number
 }
 
 export type AlterTranResult = Result & {
@@ -72,6 +83,8 @@ export type AlterTranResult = Result & {
 
 export type SearchTradeArgs = ShopArgs & {
   OrderID: string
+  UseSiteMaskLevel?: string
+  UseFloatingMask?: string
 }
 
 export type SearchTradeResult = Result & {

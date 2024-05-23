@@ -21,17 +21,23 @@ export default class Client {
     }
   }
 
-  public async post<T, U>(pathname: string, data: T): Promise<U> {
+  public async post<T, U>(
+    pathname: string,
+    data: T,
+    preprocessor?: (data: string) => string
+  ): Promise<U> {
     const res: Response = await fetch(this.config.baseUrl + pathname, {
       method: 'POST',
       body: qs.stringify(data, {encode: false}),
       ...this.config.http,
     })
 
-    const parsed: any = qs.parse(await res.text(), {decoder: decodeURIComponent})
+    const parsed: any = await res.text()
+      .then(data => preprocessor ? preprocessor(data) : data)
+      .then(data => qs.parse(data, { decoder: decodeURIComponent }))
 
     if (!res.ok || this.isError(parsed)) {
-      throw new BadRequest(`Bad Request: ${pathname}`).
+      throw new BadRequest(`Bad Request: ${pathname}`) .
         setResponse(res).parseError(parsed)
     }
 

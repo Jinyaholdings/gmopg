@@ -37,7 +37,7 @@ test('.entryTran calls API and returns response', async t => {
 
 test('.execTran calls API and returns response', async t => {
   const expect: ExecTranResult = {
-    Acs: 'acs',
+    ACS: 'acs',
     OrderID: 'orderid',
     Forward: 'forward',
     Method: Method.Lump,
