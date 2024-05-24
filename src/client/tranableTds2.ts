@@ -9,7 +9,7 @@ import {
 export default <T extends Constructor<Client>>(Base: T) =>
   class extends Base {
     public async secureTran2(args: SecureTran2Args): Promise<SecureTran2Result> {
-      const response = await this.post<SecureTran2Args, SecureTran2Result>('/payment/SecureTran2.idPass', args);
-      return response;
+      const response = await this.post<SecureTran2Args, SecureTran2Result>('/payment/SecureTran2.idPass', args)
+      return response
     }
   }
