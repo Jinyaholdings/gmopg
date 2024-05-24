@@ -31,10 +31,8 @@ export default <T extends Constructor<Client>>(Base: T) =>
     }
 
     public async execTran(args: ExecTranArgs): Promise<ExecTranResult> {
-      return this.post<ExecTranArgs, ExecTranResult>(
-        '/payment/ExecTran.idPass',
-        args,
-        data => data.startsWith('ACS=2&RedirectUrl=')
+      return this.post<ExecTranArgs, ExecTranResult>('/payment/ExecTran.idPass', args, data =>
+        data.startsWith('ACS=2&RedirectUrl=')
           ? data.replace('&t=', '%26t=') // Prevents dropping the 't' query
           : data
       )
