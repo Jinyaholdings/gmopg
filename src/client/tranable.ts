@@ -34,7 +34,7 @@ export default <T extends Constructor<Client>>(Base: T) =>
       return this.post<ExecTranArgs, ExecTranResult>('/payment/ExecTran.idPass', args, data =>
         data.startsWith('ACS=2&RedirectUrl=')
           ? data.replace('&t=', '%26t=') // Prevents dropping the 't' query
-          : data
+          : data,
       )
     }
 
