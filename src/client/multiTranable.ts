@@ -6,7 +6,7 @@ import { SearchTradeMultiArgs, SearchTradeMultiCardResult, SearchTradeMultiCvsRe
 export default <T extends Constructor<Client>>(Base: T) =>
   class extends Base {
     public async searchTradeMulti<R extends SearchTradeMultiCardResult | SearchTradeMultiCvsResult>(
-      args: SearchTradeMultiArgs
+      args: SearchTradeMultiArgs,
     ): Promise<R> {
       const defaultData = {
         ShopID: this.config.ShopID,
