@@ -90,6 +90,6 @@
     "preversion": "npm run clean && npm run build && npm test",
     "postversion": "git push origin --tags",
     "prepublishOnly": "npm run clean && npm run build && npm test",
-    "postinstall": "echo gmopg postinstall"
+    "_postinstall": "echo gmopg postinstall"
   }
 }
