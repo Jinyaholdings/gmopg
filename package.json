@@ -79,7 +79,7 @@
     ]
   },
   "scripts": {
-    "build": "echo gmopg build && tsc",
+    "build": "tsc",
     "clean": "rm -rf lib package-lock.json",
     "ci": "npm run clean && npm i && npm run lint && npm run cov && npm audit && npm run cov:report",
     "test": "ava -v",
@@ -89,7 +89,6 @@
     "lint:fix": "eslint --fix src/**/*.ts",
     "preversion": "npm run clean && npm run build && npm test",
     "postversion": "git push origin --tags",
-    "prepublishOnly": "npm run clean && npm run build && npm test",
-    "_postinstall": "echo gmopg postinstall"
+    "prepublishOnly": "npm run clean && npm run build && npm test"
   }
 }
