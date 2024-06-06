@@ -88,6 +88,7 @@
     "lint": "eslint src/**/*.ts",
     "lint:fix": "eslint --fix src/**/*.ts",
     "preversion": "npm run clean && npm run build && npm test",
+    "postinstall": "npm run build",
     "postversion": "git push origin --tags",
     "prepublishOnly": "npm run clean && npm run build && npm test"
   }
