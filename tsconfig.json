@@ -5,7 +5,6 @@
     "moduleResolution": "node",
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
-    "charset": "utf8",
     "declaration": true,
     "diagnostics": false,
     "disableSizeLimit": false,
@@ -17,7 +16,6 @@
     "isolatedModules": false,
     "listEmittedFiles": false,
     "listFiles": false,
-    "locale": "en-us",
     "newLine": "LF",
     "noImplicitAny": true,
     "noImplicitReturns": true,
@@ -35,8 +33,7 @@
     "strictNullChecks": true,
     "stripInternal": false,
     "suppressExcessPropertyErrors": false,
-    "suppressImplicitAnyIndexErrors": false,
-    "watch": false
+    "suppressImplicitAnyIndexErrors": false
   },
   "ts-node": {
     "compilerOptions": {
@@ -45,8 +42,5 @@
   },
   "include": [
     "./src/**/*"
-  ],
-  "exclude": [
-    "**/*.test.ts"
   ]
 }
