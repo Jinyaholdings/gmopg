@@ -34,16 +34,11 @@ export enum Status {
 }
 
 export enum JobCd {
-  /**
-   * @deprecated since v6.1.0. Legacy API values will be removed in future version
-   * Check/Void/Return/Returnx/Sauth: Not supported in new API
-   */
   Check = 'CHECK',
   Void = 'VOID',
   Return = 'RETURN',
   Returnx = 'RETURNX',
   Sauth = 'SAUTH',
-
   Capture = 'CAPTURE',
   Auth = 'AUTH',
   Sales = 'SALES',
