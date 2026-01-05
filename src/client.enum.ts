@@ -35,14 +35,14 @@ export enum Status {
 
 export enum JobCd {
   Check = 'CHECK',
-  Void = 'VOID',
-  Return = 'RETURN',
-  Returnx = 'RETURNX',
-  Sauth = 'SAUTH',
   Capture = 'CAPTURE',
   Auth = 'AUTH',
   Sales = 'SALES',
   Cancel = 'CANCEL',
+  Void = 'VOID',
+  Return = 'RETURN',
+  Returnx = 'RETURNX',
+  Sauth = 'SAUTH',
 }
 
 export enum SeqMode {
