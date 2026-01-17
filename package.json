@@ -4,14 +4,14 @@
   "version": "6.0.0",
   "author": "linyows",
   "license": "MIT",
-  "repository": "pepabo/gmopg",
-  "homepage": "https://github.com/pepabo/gmopg",
+  "repository": "Jinyaholdings/gmopg",
+  "homepage": "https://github.com/Jinyaholdings/gmopg",
   "keywords": [
     "api",
     "client",
     "payment"
   ],
-  "bugs": "https://github.com/pepabo/gmopg/issues",
+  "bugs": "https://github.com/Jinyaholdings/gmopg/issues",
   "main": "./lib/gmopg.js",
   "types": "./lib/gmopg.d.ts",
   "files": [
@@ -80,7 +80,7 @@
   "scripts": {
     "build": "tsc",
     "clean": "rm -rf lib package-lock.json",
-    "ci": "npm run clean && npm i && npm run lint && npm run cov && npm run cov:report",
+    "ci": "npm run clean && npm i && npm run lint && npm run cov && npm run cov:report && npm audit",
     "test": "ava -v",
     "cov": "nyc npm test",
     "cov:report": "nyc report --reporter=text-lcov > coverage.lcov",
