@@ -12,7 +12,6 @@ import {
   SearchCardDetailResult,
 } from './cardable.type'
 
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export default <T extends Constructor<Client>>(Base: T) =>
   class Cardable extends Base {
     public defaultCardData(): SiteArgs {
