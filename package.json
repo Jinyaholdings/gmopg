@@ -4,14 +4,14 @@
   "version": "6.0.0",
   "author": "linyows",
   "license": "MIT",
-  "repository": "pepabo/gmopg",
-  "homepage": "https://github.com/pepabo/gmopg",
+  "repository": "Jinyaholdings/gmopg",
+  "homepage": "https://github.com/Jinyaholdings/gmopg",
   "keywords": [
     "api",
     "client",
     "payment"
   ],
-  "bugs": "https://github.com/pepabo/gmopg/issues",
+  "bugs": "https://github.com/Jinyaholdings/gmopg/issues",
   "main": "./lib/gmopg.js",
   "types": "./lib/gmopg.d.ts",
   "files": [
@@ -36,11 +36,11 @@
     "@types/node-fetch": "^2.6.11",
     "@types/qs": "^6.9.15",
     "@types/sinon": "^17.0.3",
-    "@typescript-eslint/eslint-plugin": "^7.11.0",
-    "@typescript-eslint/parser": "^7.11.0",
+    "@typescript-eslint/eslint-plugin": "^8.54.0",
+    "@typescript-eslint/parser": "^8.54.0",
     "ava": "^6.1.3",
-    "codecov": "^3.8.3",
-    "eslint": "^8.57.0",
+    "diff": "^8.0.3",
+    "eslint": "^9.39.2",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-jsdoc": "^48.2.6",
@@ -51,9 +51,13 @@
     "nock": "^13.5.4",
     "nyc": "^15.1.0",
     "prettier": "^3.2.5",
-    "sinon": "^18.0.0",
+    "sinon": "^21.0.1",
+    "tar": "^7.5.2",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.5"
+  },
+  "overrides": {
+    "diff": "$diff"
   },
   "engines": {
     "node": ">=10"
@@ -81,7 +85,7 @@
   "scripts": {
     "build": "tsc",
     "clean": "rm -rf lib package-lock.json",
-    "ci": "npm run clean && npm i && npm run lint && npm run cov && npm audit && npm run cov:report",
+    "ci": "npm run clean && npm i && npm run lint && npm run cov && npm run cov:report && npm audit",
     "test": "ava -v",
     "cov": "nyc npm test",
     "cov:report": "nyc report --reporter=text-lcov > coverage.lcov",

@@ -10,7 +10,6 @@ import {
   ExecTranCvsResult,
 } from './cvsTranable.type'
 
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export default <T extends Constructor<Client>>(Base: T) =>
   class extends Base {
     public async entryTranCvs(args: EntryTranCvsArgs): Promise<EntryTranCvsResult> {

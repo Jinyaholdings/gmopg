@@ -16,6 +16,8 @@ jobs:
       run: |
         npm run ci
     - name: Upload coverage
-      uses: codecov/codecov-action@v3
+      uses: codecov/codecov-action@v5
       with:
-        file: ./coverage.lcov
+        token: ${{ secrets.CODECOV_TOKEN }}
+        files: ./coverage.lcov
+        slug: Jinyaholdings/gmopg

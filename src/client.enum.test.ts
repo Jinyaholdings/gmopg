@@ -48,13 +48,14 @@ test('exports Status as enum', (t) => {
 test('exports JobCd as enum', (t) => {
   const expect = {
     Check: 'CHECK',
-    Capture: 'CAPTURE',
-    Auth: 'AUTH',
-    Sales: 'SALES',
     Void: 'VOID',
     Return: 'RETURN',
     Returnx: 'RETURNX',
-    Sauth: 'SAUTH'
+    Sauth: 'SAUTH',
+    Capture: 'CAPTURE',
+    Auth: 'AUTH',
+    Sales: 'SALES',
+    Cancel: 'CANCEL'
   }
   t.deepEqual(client.JobCd, expect)
 })

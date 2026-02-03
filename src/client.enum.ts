@@ -38,6 +38,7 @@ export enum JobCd {
   Capture = 'CAPTURE',
   Auth = 'AUTH',
   Sales = 'SALES',
+  Cancel = 'CANCEL',
   Void = 'VOID',
   Return = 'RETURN',
   Returnx = 'RETURNX',
